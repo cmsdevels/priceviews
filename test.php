@@ -9,3 +9,6 @@
 echo 'test';
 
 print_r('lololo');
+print_r('lololo');
+print_r('lololo');
+print_r('lololo');
