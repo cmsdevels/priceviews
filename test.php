@@ -7,3 +7,5 @@
  */
 
 echo 'test';
+
+print_r('lololo');
