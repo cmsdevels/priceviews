@@ -1,0 +1,1 @@
+<li><?php echo CHtml::link($data->title,array('/news/default/view', 'seo_link'=>$data->seo_link)); ?></li>

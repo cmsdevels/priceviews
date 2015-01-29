@@ -1,0 +1,1209 @@
+@charset "UTF-8"
+@font-face
+  font-family: 'ProximaNovaBold'
+  src: url('fonts/ProximaNova-Bold/proximanova-bold.eot')
+  src: url('fonts/ProximaNova-Bold/proximanova-bold.eot') format('embedded-opentype'), url('fonts/ProximaNova-Bold/proximanova-bold.woff') format('woff'), url('fonts/ProximaNova-Bold/proximanova-bold.ttf') format('truetype'), url('fonts/ProximaNova-Bold/proximanova-bold.svg#ProximaNovaBold') format('svg')
+
+@font-face
+  font-family: 'ProximaNovaRegular'
+  src: url('fonts/ProximaNova-Reg/proximanova-reg.eot')
+  src: url('fonts/ProximaNova-Reg/proximanova-reg.eot') format('embedded-opentype'), url('fonts/ProximaNova-Reg/proximanova-reg.woff') format('woff'), url('fonts/ProximaNova-Reg/proximanova-reg.ttf') format('truetype'), url('fonts/ProximaNova-Reg/proximanova-reg.svg#ProximaNovaRegular') format('svg')
+@mixin radius($amount)
+  -moz-border-radius: $amount
+  -webkit-border-radius: $amount
+  border-radius: $amount
+
+@mixin shadow($amount)
+  -webkit-box-shadow: $amount
+  -moz-box-shadow: $amount
+  box-shadow: $amount
+
+@mixin sizing($amount)
+  -webkit-box-sizing: $amount
+  -moz-box-sizing: $amount
+  box-sizing: $amount
+
+@mixin transition($amount)
+  -o-transition: $amount
+  -moz-transition: $amount
+  -webkit-transition: $amount
+  -ms-transition: $amount
+  transition: $amount
+
+@mixin transform($amount)
+  -o-transform: $amount
+  -webkit-transform: $amount
+  -moz-transform: $amount
+  -ms-transform: $amount
+  transform: $amount
+
+@mixin size($amount)
+  -o-background-size: $amount
+  -moz-background-size: $amount
+  -ms-background-size: $amount
+  -webkit-background-size: $amount
+  background-size: $amount
+
+@mixin user-select($ammount)
+  -webkit-touch-callout: $ammount
+  -khtml-user-select: $ammount
+  -ms-user-select: $ammount
+  -webkit-user-select: $ammount
+  -moz-user-select: $ammount
+  user-select: $ammount
+//none,text,auto
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary
+  display: block
+*, *:after, *:before
+  @include sizing(border-box)
+  margin: 0
+  padding: 0
+html
+  height: 100%
+  margin: 0
+  padding: 0
+  width: 100%
+  body
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    @extend html
+    font:
+      weight: normal
+      size: 14px
+      family: "ProximaNovaRegular", sans-serif
+      style: normal
+    line-height: 1
+    ul,ol
+      margin: 0
+      padding: 0
+      list-style: none
+
+    .my-btn
+      display: inline-block
+      text-decoration: none
+      padding: 13px
+      @include radius(5px)
+      font: normal 16px/1 "ProximaNovaBold", sans-serif
+      color: #ffffff
+      @include transition(all .05s linear 0s)
+      @include user-select(none)
+      position: relative
+      top: 0
+      right: 0
+      outline: medium none !important
+      .text
+        display: inline-block
+        vertical-align: middle
+        margin-left: 15px
+      &.default
+        background: #97bec5
+        &:hover
+          background: #1abc9c
+        &:active
+          //padding: 11px
+          outline: medium none
+          //margin-top: 2px
+          //margin-right: 2px
+          @include shadow(inset 1px 1px 5px rgba(0,0,0,0.4))
+    .caption
+      padding: 40px 0 30px 0
+      position: relative
+      text-align: right
+      line-height: 1
+      h1
+
+        display: block
+        font: normal 35px/1 "ProximaNovaBold", sans-serif
+        padding: 0
+        margin: 0
+        text-align: left
+        color: #000000
+      .my-btn-holder
+        position: absolute
+        right: 0
+        top: 30px
+        display: block
+        .my-btn
+          margin-left: 10px
+
+    label
+      cursor: pointer
+    .text-left
+      text-align: left
+    .text-center
+      text-align: center
+    .text-right
+      text-align: right
+    .vertical
+      display: inline-block
+      vertical-align: middle
+    .va-helper
+      visibility: hidden
+      height: 100%
+      width: .01%
+      display: inline-block
+      vertical-align: middle
+    .ha-helper
+      width: 100%
+      height: .01%
+      display: inline-block
+      visibility: hidden
+    .arrow
+      display: inline-block
+      vertical-align: middle
+      margin-left: 9px
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 5px 4px 0 4px
+      border-color: #97bec5 transparent transparent transparent
+      &.arrow-down
+        position: absolute
+        bottom: 10px
+        @include transition(all .3s linear 0s)
+        left: 50%
+        margin-left: -3px
+    [class*="icons"]
+      display: inline-block
+      vertical-align: middle
+      background:
+        image: url("icons/icons.png")
+        repeat: no-repeat
+        position: 0 0
+        color: transparent
+        attachment: scroll
+      &.icons-logo
+        width: 195px
+        height: 38px
+        background: url("icons/logotype.png") no-repeat 0 0 scroll transparent
+        @include size(100%)
+      &.icons-home
+        background:
+          position: 0 0
+        width: 18px
+        height: 16px
+      &.icons-structure
+        background:
+          position: 0 -125px
+        width: 16px
+        height: 19px
+      &.icons-menu
+        background:
+          position: 0 -166px
+        width: 17px
+        height: 15px
+      &.icons-directory
+        width: 22px
+        height: 17px
+        background:
+          position: 0 -19px
+      &.icons-modules
+        background:
+          position: 0 -60px
+        width: 23px
+        height: 18px
+      &.icons-vidjet
+        background:
+          position: 0 -104px
+        width: 18px
+        height: 18px
+        &.white
+          background:
+            position: -25px -104px
+
+      &.icons-peaple
+        background:
+          position: 0 -39px
+        width: 22px
+        height: 18px
+      &.icons-settings
+        background:
+          position: 0 -81px
+        width: 20px
+        height: 20px
+      &.icons-exit
+        background:
+          position: 0 -147px
+        width: 15px
+        height: 16px
+      &.icons-pag-prev
+        background:
+          position: 0 -182px
+        width: 12px
+        height: 18px
+      &.icons-pag-next
+        background:
+          position: -13px -182px
+        width: 12px
+        height: 18px
+      &.icons-shop
+        background:
+          position: -50px 0
+        width: 20px
+        height: 18px
+      &.icons-new
+        background:
+          position: -50px -134px
+        width: 20px
+        height: 16px
+      &.icons-comment
+        background:
+          position: -50px -94px
+        width: 19px
+        height: 18px
+      &.icons-blog
+        background:
+          position: -50px -74px
+        width: 20px
+        height: 17px
+      &.icons-book
+        background:
+          position: -50px -114px
+        width: 20px
+        height: 17px
+      &.icons-market
+        background:
+          position: -50px -55px
+        width: 20px
+        height: 16px
+      &.icons-mail
+        background:
+          position: -50px -40px
+        width: 18px
+        height: 12px
+      &.icons-lang
+        background:
+          position: -50px -20px
+        width: 23px
+        height: 17px
+      &.icons-new-layout
+        background:
+          position: -50px -152px
+        width: 21px
+        height: 27px
+      &.icons-multi-play
+        background:
+          position: -26px -186px
+        width: 11px
+        height: 11px
+        margin-right: 4px
+      &.icons-arrow-bottom
+        background:
+          position: -50px -185px
+        width: 14px
+        height: 12px
+        margin-right: 4px
+      &.icons-pane
+        background:
+          position: -75px -181px
+        width: 19px
+        height: 19px
+      &.icons-delete
+        background:
+          position: -148px 0
+        width: 16px
+        height: 22px
+      &.icons-big-shop
+        background:
+          position: -100px -114px
+        width: 46px
+        height: 41px
+      &.icons-big-book
+        background:
+          position: -100px -162px
+        width: 45px
+        height: 38px
+      &.icons-big-market
+        background:
+          position: -100px -37px
+        width: 43px
+        height: 35px
+      &.icons-big-blog
+        background:
+          position: -100px 0
+        width: 43px
+        height: 34px
+      &.icons-big-new
+        background:
+          position: -100px -73px
+        width: 43px
+        height: 40px
+      &.icons-closed
+        background:
+          position: -148px -71px
+        width: 14px
+        height: 19px
+      &.icons-user
+        background:
+          position: -148px -113px
+        width: 26px
+        height: 18px
+      &.icons-small-eye
+        background:
+          position: -148px -133px
+        width: 15px
+        height: 8px
+      &.icons-small-pane
+        background:
+          position: -148px -153px
+        width: 14px
+        height: 14px
+      &.icons-small-delete
+        background:
+          position: -148px -187px
+        width: 9px
+        height: 13px
+      &.icons-datapicker
+        background:
+          position: -174px 0
+        width: 21px
+        height: 21px
+        margin-right: 15px
+      &.icons-checkbox
+        background:
+          position: -173px -77px
+        width: 16px
+        height: 16px
+      &.icons-ok
+        background:
+          position: -173px -96px
+        width: 16px
+        height: 12px
+      &.icons-white-close
+        background:
+          position: -173px -111px
+        width: 13px
+        height: 13px
+    .active,.my-btn
+      .icons-closed
+        background:
+          position: -148px -92px
+      .icons-home
+        background:
+          position: -25px 0
+      .icons-structure
+        background:
+          position: -25px -125px
+      .icons-menu
+        background:
+          position: -25px -166px
+      .icons-directory
+        background:
+          position: -25px -19px
+      .icons-modules
+        background:
+          position: -25px -60px
+      .icons-vidjet
+        background:
+          position: -25px -104px
+      .icons-peaple
+        background:
+          position: -25px -39px
+      .icons-settings
+        background:
+          position: -25px -81px
+      .icons-exit
+        background:
+          position: -25px -147px
+    a:hover
+      .icons-small-delete
+        background:
+          position: -159px -187px
+      .icons-small-pane
+        background:
+          position: -148px -168px
+      .icons-small-eye
+        background:
+          position: -148px -143px
+      .icons-shop
+        background:
+          position: -75px 0
+      .icons-new
+        background:
+          position: -75px -134px
+      .icons-comment
+        background:
+          position: -75px -94px
+      .icons-blog
+        background:
+          position: -75px -74px
+      .icons-book
+        background:
+          position: -75px -114px
+      .icons-market
+        background:
+          position: -75px -55px
+      .icons-mail
+        background:
+          position: -75px -40px
+      .icons-lang
+        background:
+          position: -75px -20px
+      .icons-settings
+        background:
+          position: -75px -153px
+      .icons-pane
+        background:
+          position: -148px -49px
+      .icons-delete
+        background:
+          position: -148px -24px
+
+
+[class*="wrapper"]
+  float: left
+  min-height: 100%
+  height: auto !important
+  background: #f5f5f5
+  position: relative
+  min-width: 980px
+  width: 100%
+  header
+    height: 60px
+    background: #ffffff
+    padding-left: 19.5%
+    border-bottom: 1px solid #d3e4e7
+    .logotype
+      position: absolute
+      left: 0
+      top: 0
+      height: 60px
+      width: 19.5%
+      text-align: center
+      float: left
+      text-decoration: none
+      .icons-logo
+        max-width: 90%
+        vertical-align: middle
+        display: inline-block
+    nav
+      height: 100%
+      > ul
+        font-size: 0
+        height: 100%
+        border-right: 1px solid #d3e4e7
+        &.clean-border
+          border-right: 1px solid transparent
+        > li
+          display: inline-block
+          vertical-align: top
+          position: relative
+          height: 100%
+          border-right: 1px solid #d3e4e7
+          &:hover
+            > a
+              background: #ecf4f5
+              .arrow-down
+                border-width: 0 4px 5px 4px
+                border-color: transparent transparent #97bec5 transparent
+
+            ul
+              visibility: visible
+              opacity: 1
+              @include transition(all .1s linear 0s)
+          &.left-ul
+            > ul
+              left: 0
+          &.right-ul
+            > ul
+              right: 0
+          &.active, &.active:hover
+            > a
+              color: #ffffff
+              background: #1abc9c
+            .arrow
+              border-color: #ffffff transparent transparent transparent
+          &:first-child
+            border-left: 1px solid #d3e4e7
+          &:last-child
+            border-right: 1px solid transparent
+          > a
+            position: relative
+            padding: 0 11px 0 10px
+            height: 100%
+            display: block
+            text-decoration: none
+            color: #000000
+
+            span
+              font: normal 16px/1 "ProximaNovaBold", sans-serif
+              display: inline-block
+              vertical-align: middle
+              &.text
+                margin-left: 10px
+          > ul
+            visibility: hidden
+            opacity: 0
+            @include shadow(0 5px 7px rgba(0, 0, 0, 0.20))
+            position: absolute
+            padding-top: 1px
+            top: 59px
+            min-width: 190px
+            border-left: 8px solid #1abc9c
+            display: block
+            z-index: 110
+            border-right: 1px solid #d3e4e7
+            .first
+              display: block
+              background: #1abc9c
+              color: #ffffff
+              border: 0px solid transparent
+              padding: 10px
+              margin-top: -1px
+              font: normal 16px/1 "ProximaNovaBold", sans-serif
+            > li
+              display: block
+              &:hover
+                a
+                  background: #ecf4f5
+              > a
+                background: #ffffff
+                height: 38px
+                display: block
+                padding: 0 10px 0 8px
+                border-bottom: 1px solid #d3e4e7
+                text-decoration: none
+                .text
+                  margin-left: 10px
+                  line-height: 1
+                  font:
+                    weight: normal
+                    size: 16px
+                  color: #000000
+                  display: inline-block
+                  max-width: 80%
+                  vertical-align: middle
+  .container
+    width: 100%
+    min-width: auto
+    max-width: none
+    margin: 0 auto
+    padding: 0
+    ul.sidebar
+      float: left
+      padding-bottom: 50px
+      background: #ffffff
+      width: 19.5%
+      border-right: 1px solid #d3e4e7
+      border-bottom: 1px solid #d3e4e7
+      display: block
+      > li
+        height: 50px
+        display: block
+        > a
+          display: block
+          text-decoration: none
+          height: 100%
+          padding: 0 15px
+          float: left
+          width: 100%
+          .text
+            font: normal 16px/1 "ProximaNovaBold", sans-serif
+            color: #97bec5
+            display: inline-block
+            margin-left: 10px
+            vertical-align: middle
+            max-width: 80%
+        > ul
+          display: block
+          float: left
+          width: 100%
+          position: relative
+          li
+            display: block
+            position: relative
+            .label
+              position: absolute
+              background: #97bec5
+              height: 18px
+              font: 700 12px/1 "Arial"
+              color: #ffffff
+              display: block
+              text-align: center
+              right: 10px
+              top: 12px
+              z-index: 101
+              @include radius(10px)
+            &.active, &.active:hover
+              .label
+                background: #ffffff
+                color: #97bec5
+              + li:hover
+                a
+                  border:
+                    color: #1abc9c #1abc9c #1abc9c #1abc9c
+              a
+                color: #ffffff
+                border:
+                  color: #1abc9c #1abc9c #1abc9c #1abc9c
+                background: #1abc9c
+                &:after
+                  background: #1abc9c
+              &:last-child,&:first-child
+                a
+                  &:before
+                    background: 
+                      image: url("icons/shadow-sidebar-active.png")
+            &:first-child
+              a
+                &:before
+                  content: ""
+                  background:
+                    image: url("icons/shadow-sidebar.png")
+                    repeat: repeat-x
+                    attachment: scroll
+                    position: 0 top
+                  height: 8px
+                  width: 100%
+                  position: absolute
+                  left: 0
+                  display: block
+                  z-index: 100
+                  top: 0px
+            &:last-child
+              a
+                &:before
+                  content: ""
+                  background:
+                    image: url("icons/shadow-sidebar.png")
+                    repeat: repeat-x
+                    attachment: scroll
+                    position: 0 bottom
+                  height: 8px
+                  width: 100%
+                  position: absolute
+                  left: 0
+                  display: block
+                  z-index: 10
+                  bottom: 0
+
+            &:hover
+              a
+                //border:
+                //  color: #1abc9c #1abc9c #1abc9c #1abc9c
+                &:after
+                  background: #1abc9c
+                background: #ecf4f5
+            a
+              display: block
+              border-top: 1px solid #d3e4e7
+              position: relative
+              text-decoration: none
+              font: normal 14px/1 "ProximaNovaBold", sans-serif
+              color: #000000
+              @include transition(all .1s linear 0s)
+
+              padding: 13px 45px 13px 54px
+              &:after
+                content: ""
+                position: absolute
+                @include transition(all .1s ease-in .1s)
+                left: 0
+                height: 100%
+                width: 6px
+                display: block
+                background: #d3e4e7
+                top: 0
+    .content
+      width: 80.5%
+      float: right
+      min-height: 10px
+      padding: 20px 27px
+
+.breadcrumb
+  background: transparent
+  border-radius: 0
+  margin: 0
+
+  li
+    &:before
+      color: #97bec5
+      font: normal 13px/1 "Arial"
+    &.active
+      a
+        color: #97bec5
+        text-decoration: none
+    a
+      font: normal 13px/1 "Arial"
+      color: #1abc9c
+      text-decoration: underline
+      &:hover
+        text-decoration: none
+.pagination
+  text-align: center
+  width: 100%
+  font-size: 0
+  li
+    display: inline-block
+    vertical-align: middle
+    &.active, &.active:hover
+      a
+        background: #1abc9c
+        text-decoration: none
+        border: 1px solid #1abc9c
+        color: #ffffff
+    &.prev,&.next
+      display: inline-block
+
+      a
+
+        text-decoration: none
+    &:hover
+      a
+        background: #ecf4f5
+        color: #1abc9c
+        text-decoration: none
+    a
+      background: #ffffff
+      padding:
+        left: 0
+        right: 0
+      text-align: center
+      border: 1px solid #d3e4e7
+      border-radius: 0 !important
+      display: block
+      width: 32px
+      height: 32px
+      color: #1abc9c
+      font: normal 16px/1 "ProximaNovaBold", sans-serif
+      text-decoration: underline
+.white-block
+  background: #ffffff
+  padding: 23px
+  border: 1px solid #d3e4e7
+.row
+  margin: 0
+.block-modules
+  font-size: 0
+  border-top: 1px solid #d3e4e7
+  border-left: 1px solid #d3e4e7
+  .module
+    //width: 33.3333%
+    background: #ffffff
+    border-right: 1px solid #d3e4e7
+    border-bottom: 1px solid #d3e4e7
+    height: 135px
+    //display: inline-block
+    text-decoration: none
+    //vertical-align: top
+    position: relative
+    padding: 0 39px 0 80px
+    @include transition(all .2s linear 0s)
+    [class*="icons-big"]
+      position: absolute
+      left: 17px
+      top: 17px
+    &:hover
+      background: #ecf4f5
+    .link-edit,.link-delete
+      background: #ecf4f5
+      width: 39px
+      height: 39px
+      text-align: center
+      text-decoration: none
+      position: absolute
+      right: 0
+      border-bottom: 1px solid #d3e4e7
+      border-left: 1px solid #d3e4e7
+      &:hover
+        background: #1abc9c
+    .link-edit
+      top: 0
+      .icons-pane
+        position: relative
+        top: 10px
+
+    .link-delete
+      top: 39px
+      .icons-delete
+        position: relative
+        top: 9px
+    .configuration
+      font: normal 14px/1 "Arial"
+      color: #97bec5
+      display: block
+      > div
+        margin-bottom: 5px
+        strong
+          font: 700 14px/1 "Arial"
+          color: #000000
+        a
+          color: #1abc9c
+          text-decoration: underline
+          font:
+            weight: 700
+            family: "Arial"
+            size: 14px
+          line-height: 1
+          &:hover
+            text-decoration: none
+    .name
+      color: #1abc9c
+      text-decoration: underline
+      display: block
+      padding: 15px 0 0 0
+      height: 40px
+      font: normal 18px/1 "ProximaNovaBold", sans-serif
+      &:hover
+        text-decoration: none
+.custom-check-box
+  text-align: center
+  input[type="checkbox"]
+    display: none
+    + label
+      font: normal 14px/1 "Calibri", sans-serif
+      color: #acacac
+      cursor: pointer
+      display: inline-block
+      vertical-align: middle
+      margin-bottom: 0
+      @include user-select(none)
+      &:before
+        content: ""
+        display: inline-block
+        height: 16px
+        vertical-align: middle
+        width: 16px
+        margin: 0
+        background-image: url("icons/icons.png")
+        background-repeat: no-repeat
+        background-position: -173px -23px
+    &:hover
+      + label
+        &:before
+          background:
+            position: -173px -41px
+    &:checked
+      + label
+        &:before
+          background-position: -173px -59px
+//input[type="checkbox"]:disabled + label::before
+  background-position: -152px -260px
+
+//input[type="checkbox"]:checked:disabled + label::before
+  background-position: -171px -260px
+.input-append
+  display: block
+  position: relative
+  color: #000000
+  margin: 10px auto 0
+  float: none
+  width: 90%
+  input
+    padding-right: 50px !important
+    margin: 0 auto 0 !important
+    width: 100% !important
+  .btn-group
+    position: absolute
+    right: 0
+    top: 0
+    height: 100%
+    width: 21px
+    background: #ecf4f5
+    border: 1px solid #d3e4e7
+    @include radius(0 3px 3px 0)
+    &.open
+      .dropdown-toggle
+        background: #1abc9c
+      .caret
+        border:
+          color: #ffffff transparent transparent
+    .dropdown-toggle
+      width: 100%
+      height: 100%
+      background: transparent
+      border-radius: 0
+      padding-left: 6px
+      padding-right: 6px
+      position: relative
+    .caret
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 5px 4px 0 4px
+      border-color: #97bec5 transparent transparent transparent
+  .dropdown-menu
+    right: 0
+    left: auto
+    min-width: 200px
+    text-align: left
+    border-radius: 0
+    padding: 0
+    li
+      display: block
+      padding: 10px
+      border-radius: 0
+      cursor: pointer
+      border: 1px solid #d7d7d7
+      &:hover
+        border: 1px solid #1abc9c
+        @include shadow(inset 0 0 7px rgba(0,0,0,.1))
+.form-user-configuration
+  margin: 0
+  padding: 0
+  display: block
+  width: 100%
+  table
+    background: #ffffff
+    border: 1px solid #d3e4e7
+    width: 100%
+    color: #000000
+    font: normal 16px/1 "Arial"
+    text-align: left
+    &.custom-table
+      td
+        &.id
+          font: normal 14px/1 "Arial"
+          color: #97bec5
+          width: 9%
+        &.check
+          width: 45px
+          padding: 0
+
+        &.login
+          width: 12%
+        &.mail
+          width: 26%
+        &.name
+          width: 16%
+        &.prior
+          width: 16%
+        &.status
+          width: 10%
+        &.btn
+          width: 8%
+          padding: 0
+          min-width: 75px
+    .arrow
+      margin-right: 10px
+      margin-left: 0
+    .label-active
+      background: #5cb85c
+      color: #ffffff
+      display: inline-block
+      padding: 5px
+      line-height: 1
+      font: 700 11px/1 "Arial"
+      @include radius(4px)
+      &.dis-active
+        background: #d9534f
+    input
+      width: 90%
+      padding-left: 10px
+      display: block
+      height: 31px
+      margin: 0 auto
+      @include radius(2px)
+      border: 1px solid #d3e4e7
+      margin-top: 10px
+      &:focus
+        border: 1px solid #1abc9c
+    .btn-configuration
+      position: relative
+      width: 33.3333%
+      height: 100%
+      display: block
+      float: left
+      text-decoration: none
+      text-align: center
+      &:hover
+        .toll-type
+          visibility: visible
+          opacity: 1
+
+      .toll-type
+        visibility: hidden
+        @include transition(all .2s linear 0s)
+        opacity: 0
+        position: absolute
+        top: -32px
+        left: -15px
+        background: #1abc9c
+        padding: 5px
+        @include radius(5px)
+        color: #ffffff
+        font: normal 11px/1 "Arial"
+        &:after
+          width: 0
+          height: 0
+          border-style: solid
+          border-width: 5px 5.5px 0 5.5px
+          border-color: #1abc9c transparent transparent transparent
+          position: absolute
+          bottom: -5px
+          left: 50%
+          margin-left: -6px
+          content: ""
+      .icons-small-pane
+        margin-top: 11px
+      .icons-small-eye
+        margin-top: 15px
+      .icons-small-delete
+        margin-top: 12px
+      &:hover
+        background: #1cbc9a
+    tbody
+      tr
+        border-top: 1px solid #d3e4e7
+        &:hover
+          background: #ecf4f5
+        td
+          padding: 0 25px
+          height: 40px
+          vertical-align: middle
+          a
+            color: #1abc9c
+            text-decoration: underline
+            &:hover
+              text-decoration: none
+
+    thead
+      tr
+        th
+          text-align: left
+          height: 90px
+          vertical-align: middle
+
+          a
+            display: inline-block
+            padding-left: 25px
+            text-align: left
+            font:
+              size: 16px
+            color: #1abc9c
+            text-decoration: underline
+            &:hover
+              text-decoration: none
+.tab-container
+  display: block
+  .nav-tabs
+    position: relative
+    z-index: 100
+    margin-bottom: -1px
+    li
+      margin-right: 6px
+      &.active,&.active:hover
+        a
+          color: #97bec5
+          background: #ffffff
+      &:hover
+        a
+          background: #1abc9c
+      a
+        margin: 0
+        font: normal 16px/1 "ProximaNovaBold", sans-serif
+        outline: none !important
+        padding: 15px 20px
+        color: #ffffff
+        background: #97bec5
+        border-bottom: 0px solid transparent
+        border:
+          color: #d3e4e7 #d3e4e7 #d3e4e7  #d3e4e7
+.dashed-link
+  width: 100%
+  height: 100%
+  max-width: 150px
+  position: relative
+  text-align: center
+  &.open
+    .form-group
+      visibility: visible
+      opacity: 1
+  .border
+    color: #1abc9c
+    font: normal 14px/1 "Arial"
+    text-decoration: none
+    border-bottom: 1px dashed #1abc9c
+    display: inline-block
+    vertical-align: middle
+    max-width: 98%
+    cursor: pointer
+    @include transition(all .2s linear 0s)
+    &:hover
+      border-bottom: 1px solid transparent
+  .form-group
+    @include shadow(0 0px 4px rgba(0,0,0,.4))
+    width: 345px
+    text-align: left
+    display: block
+    position: absolute
+    border: 2px solid #97bec5
+    bottom: 40px
+    visibility: hidden
+    opacity: 0
+    @include transition(all .2s linear 0s)
+    left: 50%
+    margin: 0 0 0 -173px
+    @include radius(5px)
+    padding: 45px 8px 12px 9px
+    font-size: 0
+    background: #ffffff
+    &:after
+      content: ""
+      position: absolute
+      bottom: -18px
+      left: -5px
+      background: url("icons/arrow-tolltype.png") no-repeat 0 0 scroll transparent
+      width: 351px
+      height: 18px
+      display: block
+    button
+      border: 0px solid transparent
+      width: 31px
+      height: 31px
+      padding: 0
+      display: inline-block
+      vertical-align: middle
+      background: #97bec5
+      margin-left: 10px
+      &:hover
+        background: #1cbc9a
+    .dropdown-menu
+      min-width: 240px
+    .form-caption
+      position: absolute
+      top: 0
+      left: 0
+      height: 33px
+      padding: 7px 0 0 9px
+      background: #97bec5
+      width: 100%
+      @include radius(3px 3px 0 0)
+      color: #ffffff
+      font: normal 16px/1 "ProximaNovaBold", sans-serif
+      display: block
+
+    .input-append
+      width: 240px
+      display: inline-block
+      vertical-align: middle
+      margin: 0
+.line-form
+  display: block
+  margin: 0
+  padding: 0
+  .row-papped
+    padding-right: 80px
+    .col-xs-4
+      padding: 0 30px 0 0
+  .input-append
+    margin: 0
+    width: 100%
+    input
+      margin: 0
+  label
+    margin-bottom: 10px
+    min-height: 25px
+    display: block
+    font: normal 16px/1 "ProximaNovaBold",sans-serif
+    color: #97bec5
+  input
+    padding-left: 10px
+    display: block
+    @include radius(2px)
+    border: 1px solid #d3e4e7
+    height: 31px
+    width: 100%
+    &:focus
+      border: 1px solid #1abc9c

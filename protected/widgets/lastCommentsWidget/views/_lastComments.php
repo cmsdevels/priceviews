@@ -1,0 +1,1 @@
+<li><div class="body"><?php echo $data->content; ?></div></li>

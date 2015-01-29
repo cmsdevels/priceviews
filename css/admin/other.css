@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "ProximaNovaBold";
+    src: url("../../css/admin/fonts/ProximaNova-Bold/proximanova-bold.eot");
+    src: url("../../css/admin/fonts/ProximaNova-Bold/proximanova-bold.eot") format("embedded-opentype"), url("../../css/admin/fonts/ProximaNova-Bold/proximanova-bold.woff") format("woff"), url("../../css/admin/fonts/ProximaNova-Bold/proximanova-bold.ttf") format("truetype"), url("../../css/admin/fonts/ProximaNova-Bold/proximanova-bold.svg#ProximaNovaBold") format("svg"); }
+
+@font-face {
+    font-family: "ProximaNovaRegular";
+    src: url("../../css/admin/fonts/ProximaNova-Reg/proximanova-reg.eot");
+    src: url("../../css/admin/fonts/ProximaNova-Reg/proximanova-reg.eot") format("embedded-opentype"), url("../../css/admin/fonts/ProximaNova-Reg/proximanova-reg.woff") format("woff"), url("../../css/admin/fonts/ProximaNova-Reg/proximanova-reg.ttf") format("truetype"), url("../../css/admin/fonts/ProximaNova-Reg/proximanova-reg.svg#ProximaNovaRegular") format("svg"); }
+
+
+h1,input,label{
+    font-family: 'ProximaNovaBold'!important;
+}
+#login-form{
+    position: absolute;
+    top: 35%;
+    overflow: hidden;
+    z-index: 2;
+    left: 50%;
+    margin-left: -126px;
+    width: 268px;
+    border-radius: 11px;
+    border: 1px solid #97bec5;
+    background-color: white;
+}
+#login-form>div.row.buttons{
+    text-align: center;
+}
+#login-form>div.row{
+    margin: 15px 0 0;
+}
+#login-form>div.row>label{
+    display: block;
+    margin: 0 0 0 28px;
+    color: #97bec5;
+    font-size: 16px;
+}
+#login-form>div.row>input:focus { background-color: #fff; }
+#login-form>div.row>input:-webkit-autofill{
+    background-color: #fff !important;
+    -webkit-box-shadow:0 0 0 50px white inset;
+}
+#login-form>div.row>input{
+    display: block;
+    width: 86%;
+    padding-left: 5%;
+    margin-left: 7%;
+    margin-top: 10px;
+    height: 29px;
+    border-radius: 5px;
+    border: 1px solid #c7d7da;
+    font-size: 13px;
+    background: white;
+    outline: none
+}
+#login-form>h1{
+    height: 52px;
+    display: block;
+    padding: 16px 0 0 15px;
+    background-color: #97bec5;
+    font-size: 25px;
+    color: white;
+    margin: 0;
+}
+
+#footer{
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 11px;
+    font-family: arial, helvetica, sans-serif;
+}
+#footer a{
+    color: #1abc9c;
+}
+.logo_login_page{
+    text-align: center;
+    margin-top: 25px;
+}
+.logo_login_page img{
+    margin-left: -25px;
+}
+button.button_login_form{
+    background-color: #97bec5;
+    margin: 15px 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'ProximaNovaBold';
+    color: white;
+}
+div.errorMessage{
+    color: red;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 3px;
+}
+#login-form>div.row>input[type="checkbox"].custom-check-box {
+    display: none; }
+input[type="checkbox"].custom-check-box + label {
+    font: normal 14px/1 "Calibri", sans-serif;
+    color: #acacac;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none; }
+input[type="checkbox"].custom-check-box + label:before {
+    content: "";
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+
+    width: 16px;
+    margin: -2px 15px 0 0;
+    background-image: url("../../css/admin/icons/icons.png");
+    background-repeat: no-repeat;
+    background-position: -173px -23px; }
+input[type="checkbox"].custom-check-box:hover + label:before {
+    background-position: -173px -41px; }
+input[type="checkbox"].custom-check-box:checked + label:before {
+    background-position: -173px -59px; }
+
+
+input[type="checkbox"]+label.custom-check-box.header{
+    text-align: center;
+    display: block;
+    margin-top: 30%;
+}
+#login-form>div.row.rememberMe>label{
+    margin-right: 15px;
+}
+.content.login_page{
+    min-height: 350px;
+}

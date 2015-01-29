@@ -1,0 +1,1 @@
+<h3><?php echo Yii::t('core/admin','The system has been successfully installed!'); ?></h3>
