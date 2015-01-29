@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="priceviews" uploadOnCheckin="d9300b56-4465-4999-803e-331ff21b41b5">
+  <component name="PublishConfigData" serverName="priceviews" persistUploadOnCheckin="false">
     <serverData>
       <paths name="priceviews">
         <serverdata>
@@ -10,7 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="priceviews" />
   </component>
 </project>
 
