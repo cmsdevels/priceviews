@@ -126,7 +126,8 @@ class CmsModule extends CWebModule
 
     public function getInstallError()
     {
-        return $this->_installError;
+        return true;
+        return $this->_installError; 
     }
 
     /**
